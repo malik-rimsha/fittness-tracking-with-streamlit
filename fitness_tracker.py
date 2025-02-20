@@ -5,6 +5,12 @@ from datetime import datetime
 import json
 import os
 
+try:
+    import plotly.express as px
+except ImportError as e:
+    raise ImportError("Plotly is not installed or accessible.") from e
+
+
 # Load/Save Workout Data
 def load_workouts():
     if os.path.exists('workouts.json'):
